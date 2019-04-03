@@ -10,3 +10,6 @@ Where `<sync_name>` is one of:
 
 * `refseq`
   * 1 option for destination directory
+
+* `ebi_metagnomes`
+  * 1 option for destination directory
