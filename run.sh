@@ -6,5 +6,6 @@
 set -e
 
 if [ "${1}" = "refseq" ] ; then
-  python -m src.refdata_sync.refseq_sync $2
+  ftp_url="rsync://ftp.ncbi.nlm.nih.gov/genomes/refseq/"
+  rsync --copy-links --recursive --times --verbose $ftp_url $2
 fi
