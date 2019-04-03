@@ -7,10 +7,9 @@ set -e
 
 if [ "${1}" = "refseq" ] ; then
   ftp_url="rsync://ftp.ncbi.nlm.nih.gov/genomes/refseq/"
-  rsync --copy-links --recursive --times --verbose $ftp_url $2
+  rsync --chmod=770 --copy-links --recursive --times --verbose $ftp_url $2
 fi
 
 if [ "${1}" = "ebi_metagenomes"] ; then
   lftp -e "mirror --continue /vol1/ $2 --parallel=8" ftp.sra.ebi.ac.uk
 fi
-
