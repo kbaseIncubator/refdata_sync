@@ -9,7 +9,7 @@ if [ "${1}" = "refseq" ] ; then
   python -m src.refdata_sync.refseq_sync $2
 fi
 
-if [ "${1}"= "ebi_metagenomes"] ; then
+if [ "${1}" = "ebi_metagenomes"] ; then
   lftp -e "mirror --continue /vol1/ $2 --parallel=8" ftp.sra.ebi.ac.uk
 fi
 
