@@ -10,6 +10,10 @@ if [ "${1}" = "refseq" ] ; then
   rsync --chmod=770 --copy-links --recursive --times --verbose $ftp_url $2
 fi
 
+#if [ "${1}" = "ebi_metagenomes"] ; then
+#  lftp -e "mirror --continue /vol1/ $2 --parallel=8" ftp.sra.ebi.ac.uk
+#fi
+
 if [ "${1}" = "ebi_metagenomes"] ; then
-  lftp -e "mirror --continue /vol1/ $2 --parallel=8" ftp.sra.ebi.ac.uk
+    python -m src.refdata_sync.ebi_metagenomes_sync $2
 fi
