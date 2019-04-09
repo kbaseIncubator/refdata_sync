@@ -14,6 +14,6 @@ fi
 #fi
 
 if [ "${1}" = "ebi_metagenomes"] ; then
-    python -m src.refdata_syc.ebi_metagenomes_sync $2
+    python -m src.refdata_sync.ebi_metagenomes_sync $2
 fi
 
