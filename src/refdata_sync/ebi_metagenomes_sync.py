@@ -34,7 +34,7 @@ def run(dest_path, overwrite=False):
                 fid.write(url+"\n")
 
 if __name__ == "__main__":
-    if len(sys.argv) != 3:
+    if len(sys.argv) != 2:
         # error here
         fatal("Pass in the destination path as the first argument")
     dest_path = sys.argv[1]
